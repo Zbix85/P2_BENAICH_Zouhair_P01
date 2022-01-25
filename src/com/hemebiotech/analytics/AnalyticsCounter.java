@@ -65,25 +65,25 @@ public class AnalyticsCounter {
 	    * While loop on the symptoms file and to read line by line to feed the  array 
 	    */
 			while (line != null) {
-				j++;	// increment i
+				j++;	
 				array.add(line);
 				line = reader.readLine();	// get another symptom
 			    }
-	        // Methode pour trier le tableau 
+	        // Method to sort the array
 			Collections.sort(array);
-			//Création d'un objet de sortie Writer de class FileWriter afin d'afficher les symptomes sur le FileOut.java
+			//Creation of a Writer output object of class FileWriter in order to display the symptoms on the FileOut.java
 			FileWriter writer = new FileWriter ("result.out");
 	        res = sd.countMyItems(array);
 	       
-	      //Boucle sur le tableau des symptoms déjà triés et comptés afin de faire l'affichage sur system.out.println via les 2 methodes getChaine et getOccurence
+	      //Loop on the array of symptoms already sorted and counted in order to display on system.out.println via the 2 methods getChaine and getOccurence
 	        for (int i = 0; i < res.size(); i++) {
 	            System.out.println("" + ((ReadSymptomDataFromFile)res.get(i)).getChaine() +" " + ((ReadSymptomDataFromFile)res.get(i)).getOccurence());
 	            writer.write("Symptom " + ((ReadSymptomDataFromFile)res.get(i)).getChaine() +" présent " + ((ReadSymptomDataFromFile)res.get(i)).getOccurence()+ " fois\n");
 	        }
-	      //Fermeture des ressources
+	      //Closing resources
 	       	writer.close();
 			reader.close();	
-		 //La captutre des exceptions sera effectuée afin de les représenter à l'utilisateur d'uen façon conpréhensive et fonctionnelle
+		 //The capture of exceptions will be done in order to present them to the user in a comprehensive and functional way
 		} catch (FileNotFoundException e) {
 			System.err.println("Symptoms file not found");
 		} catch (IOException e) {
