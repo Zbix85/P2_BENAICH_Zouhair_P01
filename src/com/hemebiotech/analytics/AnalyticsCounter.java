@@ -90,6 +90,4 @@ public class AnalyticsCounter {
 			System.err.println("Unable to read the contents of the symptoms file");
 		}
    }
-
-
 }

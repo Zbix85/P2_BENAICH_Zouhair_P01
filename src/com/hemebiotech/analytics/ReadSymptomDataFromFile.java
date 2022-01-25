@@ -29,5 +29,4 @@ public class ReadSymptomDataFromFile {
 	    public int getOccurence() {
 	        return occurence;
 	    }
-
 }
