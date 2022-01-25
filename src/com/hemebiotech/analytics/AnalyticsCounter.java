@@ -12,25 +12,25 @@ import java.util.Collections;
 /**
  * 
  * @author zouhair
- * Création d'une class Main qui instancie l'objet ReadSymptomDataFromFile de la class ReadSymptomDataFromFile
+ * Creation of a Main class which will instantiate the ReadSymptomDataFromFile object of the ReadSymptomDataFromFile class
  */
 
 public class AnalyticsCounter {
 	
 	/**
-	 * Class main d'execution du projet
+	 * Class main  project execution
 	 * @param args
 	 */
 	public static void main(String[] args) {
 			
-	   Execution_projet();
+	   executionProjet();
 
     }
 	
 	/**
-	 * Fonction CountMyItems qui va faire un comptage des items dans un tableau 
-	 * @param objets :lit un tableau avec plusieurs chaines
-	 * @return : retourne un tableau avec des chaines comptés (occurence affichée pour les chaines redondantes)
+	 * CountMyItems function which will count the items in an array
+	 * @param objects: reads an array with several strings
+	 * @return: returns an array with counted strings (displayed occurrence for redundant strings)
 	 */
 	public ArrayList countMyItems(ArrayList<String> objets) {
 	    ArrayList<ReadSymptomDataFromFile> mesObjets = new ArrayList();
@@ -48,10 +48,10 @@ public class AnalyticsCounter {
 	    return mesObjets;
 	}
 	
-	public static void Execution_projet()
+	public static void executionProjet()
 	{
 	/**
-	 * Methode try catch pour capturer les exceptions liées à l'ouverture du fichier symptoms 
+	 * Try catch method to catch exceptions related to opening the symptoms file
 	 */
 	try {
 			BufferedReader reader = new BufferedReader (new FileReader("symptoms.txt"));
@@ -62,13 +62,12 @@ public class AnalyticsCounter {
 	        ArrayList array = new ArrayList();
 	        ArrayList res = new ArrayList();
 	   /**
-	    * Boucle while sur le fichier  symptoms et pour lire ligne par ligne afin d'alimenter le tableau array 
+	    * While loop on the symptoms file and to read line by line to feed the  array 
 	    */
 			while (line != null) {
 				j++;	// increment i
 				array.add(line);
 				line = reader.readLine();	// get another symptom
-				
 			    }
 	        // Methode pour trier le tableau 
 			Collections.sort(array);
@@ -81,17 +80,15 @@ public class AnalyticsCounter {
 	            System.out.println("" + ((ReadSymptomDataFromFile)res.get(i)).getChaine() +" " + ((ReadSymptomDataFromFile)res.get(i)).getOccurence());
 	            writer.write("Symptom " + ((ReadSymptomDataFromFile)res.get(i)).getChaine() +" présent " + ((ReadSymptomDataFromFile)res.get(i)).getOccurence()+ " fois\n");
 	        }
-
 	      //Fermeture des ressources
 	       	writer.close();
 			reader.close();	
 		 //La captutre des exceptions sera effectuée afin de les représenter à l'utilisateur d'uen façon conpréhensive et fonctionnelle
 		} catch (FileNotFoundException e) {
-			System.err.println("Le fichier symptomes n'a pas été trouvé");
+			System.err.println("Symptoms file not found");
 		} catch (IOException e) {
-			System.err.println("Impossible de lire le contenu du fichier symptomes");
+			System.err.println("Unable to read the contents of the symptoms file");
 		}
-
    }
 
 

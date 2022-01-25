@@ -1,12 +1,9 @@
 
-
 package com.hemebiotech.analytics;
-
-
 /**
  * 
  * @author zouha
- * class ReadSymptomDataFromFile avec 2 attributs chaine(nom de symptome) et occurence(combien de fois le symptome est apparu) avec getter setter
+ * class ReadSymptomData FromFile with 2 attributes string(symptom name) and occurrence(how many times the symptom has appeared) with getter setter
  * 	 
  */
 
@@ -20,14 +17,14 @@ public class ReadSymptomDataFromFile {
 	    }
 	 /**
 	  *  
-	  * @return : methode qui permet de retourner le nom du symptome selon son emplacement dans le tableau
+	  * @return : method that returns the name of the symptom according to its location in the table
 	  */
 	    public String getChaine() {
 	        return chaine;
 	    }
 	 /**
 	  * 
-	  * @return : methode qui permet de retourner le nombre d'occurence  d'un symptome selon son emplacement dans le tableau 
+	  * @return : method that returns the number of occurrences of a symptom according to its location in the table
 	  */
 	    public int getOccurence() {
 	        return occurence;
